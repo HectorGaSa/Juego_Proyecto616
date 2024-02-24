@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dacjtpx31rlyg"]
+
+[ext_resource type="Script" path="res://Movimiento.gd" id="2_bt7wv"]
+[ext_resource type="Texture2D" uid="uid://dovg8xyrsnhc" path="res://Assets/Player/Hadesnew.png" id="3_ha3lm"]
+[ext_resource type="Texture2D" uid="uid://bt7visnaydbrk" path="res://Assets/Background/mainroomnew.png" id="3_o8ooo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_errb4"]
+size = Vector2(1756, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oyf4"]
+size = Vector2(128, 945)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r2ww"]
+size = Vector2(1756, 104.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtcki"]
+size = Vector2(121.5, 935)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0njxf"]
+
+[node name="Node" type="Node"]
+
+[node name="Mainroomnew" type="StaticBody2D" parent="."]
+position = Vector2(1518, 86)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mainroomnew"]
+position = Vector2(-4, -417.5)
+shape = SubResource("RectangleShape2D_errb4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Mainroomnew"]
+position = Vector2(-818, -3.5)
+shape = SubResource("RectangleShape2D_0oyf4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Mainroomnew"]
+position = Vector2(-1, 417.25)
+shape = SubResource("RectangleShape2D_6r2ww")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Mainroomnew"]
+position = Vector2(816.75, 1.5)
+shape = SubResource("RectangleShape2D_rtcki")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mainroomnew"]
+texture = ExtResource("3_o8ooo")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(1507, 84)
+script = ExtResource("2_bt7wv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_0njxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, 3)
+texture = ExtResource("3_ha3lm")
+hframes = 3
+vframes = 4

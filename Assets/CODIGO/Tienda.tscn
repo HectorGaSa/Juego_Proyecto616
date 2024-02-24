@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://yhejt8ae6423"]
+
+[ext_resource type="Script" path="res://Tienda.gd" id="1_nuqv3"]
+[ext_resource type="Script" path="res://Objeto.gd" id="2_ck8ye"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nuqv3")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_ck8ye")

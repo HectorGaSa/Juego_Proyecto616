@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpw0keh82vr0r"]
+
+[ext_resource type="Texture2D" uid="uid://csl8s645nxnss" path="res://Assets/Background/mainroom.png" id="1_if0dc"]
+[ext_resource type="Script" path="res://Escenas/CharacterBody2D.gd" id="2_ohj6e"]
+[ext_resource type="Texture2D" uid="uid://cjiiugyhw0gdx" path="res://Assets/Player/Hades.png" id="2_tgdks"]
+
+[node name="Sala" type="Node2D"]
+
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(158.75, 89.3128)
+scale = Vector2(0.698053, 0.578627)
+texture = ExtResource("1_if0dc")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(766, 444)
+script = ExtResource("2_ohj6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-611, -373)
+scale = Vector2(0.933595, 0.933595)
+texture = ExtResource("2_tgdks")
+hframes = 3
+vframes = 4
