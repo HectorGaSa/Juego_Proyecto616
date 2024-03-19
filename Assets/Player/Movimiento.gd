@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-const Fuego = preload("res://Assets/Player/fuego.tscn")
 
 var anim_player
 var anim_sprite
 var direction = Vector2.ZERO
 var speed = 5  # Velocidad de movimiento
-const Bullet = preload("res://Assets/Player/Bullet.gd")
+
 
 func _ready():
 	anim_player = $AnimatedSprite2D
@@ -57,24 +56,4 @@ func move():
 		anim_sprite.stop()
 
 
-func shootFire():
-	var shoot_fire = Fuego.instance()
-	if $AnimatedSprite2D.flip_h:
-		$Shoot.scale.x = -1
-		shoot_fire.scale = Vector2(-2.3, 2.3)
-		shoot_fire.velocidad = -320
-	else:
-		$Shoot.scale.x = 1
-		shoot_fire.scale = Vector2(2.3, 2.3)
-		shoot_fire.velocidad = 320
-	if $AnimatedSprite2D.flip_v:
-		$Shoot.scale.y = -1
-		shoot_fire.scale = Vector2(-2.3, 2.3)
-		shoot_fire.velocidad = -320
-	else:
-		$Shoot.scale.y = 1
-		shoot_fire.scale = Vector2(2.3, 2.3)
-		shoot_fire.velocidad = 320
-	
-	shoot_fire.global_position = $Shoot/Direction.global_position
-	get_tree().call_group("Mundo", "add_child", shoot_fire)
+

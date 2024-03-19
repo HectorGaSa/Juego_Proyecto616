@@ -1,9 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://bq7jfo12sls4j"]
+[gd_scene load_steps=30 format=3 uid="uid://bq7jfo12sls4j"]
 
 [ext_resource type="Script" path="res://Assets/Player/Cabeza.gd" id="1_ntbtm"]
-[ext_resource type="Texture2D" uid="uid://xhd2o008qgal" path="res://Assets/Player/Cuerpos.png" id="2_edpo4"]
-[ext_resource type="Texture2D" uid="uid://bhvgt3jhymole" path="res://Assets/Player/Cabezas.png" id="3_yy3ko"]
-[ext_resource type="PackedScene" uid="uid://bvimpniaf0jei" path="res://Assets/Player/fuego.tscn" id="4_r1svb"]
+[ext_resource type="Texture2D" uid="uid://xhd2o008qgal" path="res://Assets/Player/Img/Cuerpos.png" id="2_edpo4"]
+[ext_resource type="Texture2D" uid="uid://bhvgt3jhymole" path="res://Assets/Player/Img/Cabezas.png" id="3_yy3ko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqu61"]
 atlas = ExtResource("2_edpo4")
@@ -226,12 +225,7 @@ sprite_frames = SubResource("SpriteFrames_0w1ak")
 animation = &"Look_Down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_8xr8m")
 disabled = true
 
 [node name="Shoot" type="Marker2D" parent="."]
-
-[node name="Direction" type="Marker2D" parent="Shoot"]
-
-[node name="Fuego" parent="Shoot" instance=ExtResource("4_r1svb")]

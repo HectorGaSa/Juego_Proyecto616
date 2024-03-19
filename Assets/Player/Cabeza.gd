@@ -1,82 +1,60 @@
 extends CharacterBody2D
 
-const Fuego = preload("res://Assets/Player/fuego.tscn")
-const Cabeza = preload("res://Assets/Player/Cabeza.tscn")
-
+var fuego = preload("res://Assets/Fuegos/Fire.tscn")
+@onready var shoot : Marker2D = $Shoot
 var anim_player
-var fuego
 var direction = Vector2.ZERO
-var speed = 5  # Velocidad de movimiento
+
 
 func _ready():
 	anim_player = $AnimatedSprite2D
-	fuego = get_node("Shoot/Fuego")
-
-	
 
 func _process(delta):
-	if Input.is_action_just_pressed("shoot"):
-		shootFire()
-	move()
+	move(delta)
 
-	# Lógica para detectar las pulsaciones de teclas y actualizar la dirección
-func move():
+func move(delta):
 	direction = Vector2.ZERO
+	
 	if Input.is_action_pressed("shoot_right"):
+		direction = Vector2.RIGHT
 		anim_player.play("Look_Right")
-		shootFire()
+		shoot.set_position(Vector2(12,0))
+		shootFire(delta, direction)
 		anim_player.stop()
+		
 	if Input.is_action_pressed("shoot_left"):
+		direction = Vector2.LEFT
 		anim_player.play("Look_Left")
-		shootFire()
+		shoot.set_position(Vector2(-12,0))
+		shootFire(delta, direction)
 		anim_player.stop()
+		
 	if Input.is_action_pressed("shoot_down"):
+		direction = Vector2.DOWN
 		anim_player.play("Look_Down")
-		shootFire()
+		shoot.set_position(Vector2(0,12))
+		shootFire(delta, direction)
 		anim_player.stop()
+		
 	if Input.is_action_pressed("shoot_up"):
+		direction = Vector2.UP
 		anim_player.play("Look_Up")
-		shootFire()
+		shoot.set_position(Vector2(0,-12))
+		shootFire(delta, direction)
 		anim_player.stop()
 
-
+func shootFire(delta, direction):
 	
-	# Lógica para reproducir las animaciones de movimiento
-	#if direction != Vector2.ZERO:
-		#if abs(direction.x) > abs(direction.y):
-			#if direction.x > 0:
-				#anim_player.play("Look_Right")
-			#else:
-				#anim_player.play("Look_Left")
-		#else:
-			#if direction.y > 0:
-				#anim_player.play("Look_Down")
-			#else:
-				#anim_player.play("Look_Up")
-	#else:
-		# Si no hay movimiento, detén la animación
-		#anim_player.stop()
-
-
-func shootFire():
-	var shoot_fire = fuego
-	shoot_fire.scale = Vector2()
-	if $AnimatedSprite2D.flip_h:
-		$Shoot.scale.x = -1
-		shoot_fire.scale = Vector2(-2.3, 2.3)
-		shoot_fire.velocidad = -320
-	else:
-		$Shoot.scale.x = 1
-		shoot_fire.scale = Vector2(2.3, 2.3)
-		shoot_fire.velocidad = 320
-	if $AnimatedSprite2D.flip_v:
-		$Shoot.scale.y = -1
-		shoot_fire.scale = Vector2(-2.3, 2.3)
-		shoot_fire.velocidad = -320
-	else:
-		$Shoot.scale.y = 1
-		shoot_fire.scale = Vector2(2.3, 2.3)
-		shoot_fire.velocidad = 320
+	var shoot_fire = fuego.instantiate() as Node2D
+	print(shoot.get_position())
 	
-	shoot_fire.global_position = $Shoot/Direction.global_position
-	get_tree().call_group("Mundo", "add_child", shoot_fire)
+	shoot_fire.global_position = shoot.get_position() * direction
+	print(shoot_fire.global_position)
+
+	shoot_fire.direction = direction
+
+	# Add the shoot node to the scene tree
+	get_parent().add_child(shoot_fire)
+	
+	# Print a message to the console
+	print("Shoot")

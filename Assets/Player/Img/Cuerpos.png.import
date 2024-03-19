@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bytdp5eiibkxx"
-path="res://.godot/imported/enemigo.png-ae033877b9f450d9414286872a724c9f.ctex"
+uid="uid://xhd2o008qgal"
+path="res://.godot/imported/Cuerpos.png-4a6651b26614b6506dafd94f80c66bb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/Img/enemigo.png"
-dest_files=["res://.godot/imported/enemigo.png-ae033877b9f450d9414286872a724c9f.ctex"]
+source_file="res://Assets/Player/Img/Cuerpos.png"
+dest_files=["res://.godot/imported/Cuerpos.png-4a6651b26614b6506dafd94f80c66bb0.ctex"]
 
 [params]
 
@@ -25,10 +25,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

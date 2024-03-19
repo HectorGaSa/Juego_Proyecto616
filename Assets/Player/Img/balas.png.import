@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://efyebcc1cjyb"
-path="res://.godot/imported/prototipo_carta.png-5383dd1945c1489babf3144d8ecb3feb.ctex"
+uid="uid://bymyxmy1dnxqi"
+path="res://.godot/imported/balas.png-819b41b75d47b3380b74c0e153b60fe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/Img/prototipo_carta.png"
-dest_files=["res://.godot/imported/prototipo_carta.png-5383dd1945c1489babf3144d8ecb3feb.ctex"]
+source_file="res://Assets/Player/Img/balas.png"
+dest_files=["res://.godot/imported/balas.png-819b41b75d47b3380b74c0e153b60fe9.ctex"]
 
 [params]
 
@@ -25,10 +25,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

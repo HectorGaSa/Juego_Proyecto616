@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cff2h3dxy8be7"]
+
+[ext_resource type="SpriteFrames" uid="uid://iffglkel2ht5" path="res://Assets/Fuegos/fuego.tres" id="1_nuvrt"]
+[ext_resource type="Script" path="res://Assets/Fuegos/fire.gd" id="2_0x4qt"]
+
+[node name="Fire" type="AnimatedSprite2D"]
+position = Vector2(-2, -8)
+sprite_frames = ExtResource("1_nuvrt")
+animation = &"Disparo"
+script = ExtResource("2_0x4qt")

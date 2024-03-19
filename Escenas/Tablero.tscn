@@ -1,9 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpw0keh82vr0r"]
+[gd_scene load_steps=7 format=3 uid="uid://cpw0keh82vr0r"]
 
 [ext_resource type="Texture2D" uid="uid://bt7visnaydbrk" path="res://Assets/Background/mainroomnew.png" id="1_2w2oh"]
-[ext_resource type="Script" path="res://Assets/Player/Bullet.gd" id="4_ourxf"]
-[ext_resource type="Texture2D" uid="uid://bymyxmy1dnxqi" path="res://Assets/Player/balas.png" id="5_utexi"]
-[ext_resource type="PackedScene" uid="uid://yy43v82hogin" path="res://Assets/Player/Jugador.tscn" id="7_gla5t"]
+[ext_resource type="Script" path="res://Escenas/Tablero.gd" id="1_81mgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_he03c"]
 size = Vector2(185.437, 1019.92)
@@ -17,20 +15,8 @@ size = Vector2(1850.82, 153.147)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1l81"]
 size = Vector2(1856.78, 149.111)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kqr3c"]
-radius = 5.0
-
-[sub_resource type="Animation" id="Animation_rfyba"]
-resource_name = "Disparo"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_y3jik"]
-_data = {
-"Disparo": SubResource("Animation_rfyba")
-}
-
-[sub_resource type="AnimationRootNode" id="AnimationRootNode_pjsw3"]
-
 [node name="Sala" type="Node2D"]
+script = ExtResource("1_81mgt")
 
 [node name="Escenario" type="Sprite2D" parent="."]
 position = Vector2(160.042, 89.4635)
@@ -55,31 +41,3 @@ shape = SubResource("RectangleShape2D_ewap2")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
 position = Vector2(-8.25073, 435.622)
 shape = SubResource("RectangleShape2D_o1l81")
-
-[node name="Bala" type="CharacterBody2D" parent="."]
-position = Vector2(160, 89)
-script = ExtResource("4_ourxf")
-
-[node name="Sprite2D" type="Sprite2D" parent="Bala"]
-position = Vector2(43, 1)
-scale = Vector2(0.4, 0.429022)
-texture = ExtResource("5_utexi")
-hframes = 6
-vframes = 5
-frame = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bala"]
-position = Vector2(41, 3)
-shape = SubResource("CircleShape2D_kqr3c")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Bala"]
-libraries = {
-"": SubResource("AnimationLibrary_y3jik")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="Bala"]
-tree_root = SubResource("AnimationRootNode_pjsw3")
-anim_player = NodePath("../AnimationPlayer")
-
-[node name="Jugador" parent="." instance=ExtResource("7_gla5t")]
-position = Vector2(138, 69)
