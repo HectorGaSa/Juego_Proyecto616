@@ -25,19 +25,19 @@ texture = ExtResource("1_2w2oh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Escenario"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
+[node name="Right Wall" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
 position = Vector2(832.038, 6.18201)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_he03c")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
+[node name="Left Wall" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
 position = Vector2(-837.285, 1.18213)
 shape = SubResource("RectangleShape2D_mdut3")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
+[node name="Up Wall" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
 position = Vector2(-7.16113, -425.276)
 shape = SubResource("RectangleShape2D_ewap2")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
+[node name="Down Wall" type="CollisionShape2D" parent="Escenario/StaticBody2D"]
 position = Vector2(-8.25073, 435.622)
 shape = SubResource("RectangleShape2D_o1l81")

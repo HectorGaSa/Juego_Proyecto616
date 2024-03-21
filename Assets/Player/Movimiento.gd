@@ -5,11 +5,12 @@ var anim_player
 var anim_sprite
 var direction = Vector2.ZERO
 var speed = 5  # Velocidad de movimiento
-
+var vida = 100
 
 func _ready():
 	anim_player = $AnimatedSprite2D
 	anim_sprite = get_node("Cabeza/AnimatedSprite2D")
+	self.add_to_group("jugador")
 
 	# Reproduce una animación en la escena hija
 
@@ -55,5 +56,8 @@ func move():
 		anim_player.stop()
 		anim_sprite.stop()
 
-
-
+func recibir_daño(cantidad):
+	vida -= cantidad
+	if vida <= 0:
+		queue_free()
+		emit_signal("jugador_muerto")
